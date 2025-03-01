@@ -1,0 +1,146 @@
+/* עיצוב כללי */
+body.registration-page {
+    font-family: var(--primary-font);
+    text-align: center;
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+/* רקע וידאו */
+.video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+/* מיכל ההרשמה */
+.registration-container {
+    max-width: 500px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 20px rgba(255, 165, 0, 0.5);
+    margin: 100px auto;
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+/* אנימציה של הטופס */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* טופס ההרשמה */
+.registration-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* שדות הקלט */
+.registration-form input,
+.registration-form select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid var(--highlight-color);
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+/* עיצוב רשימת הדמויות */
+.character-select {
+    font-family: var(--primary-font);
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
+/* כשהמשתמש מקליד */
+.registration-form input:focus,
+.registration-form select:focus {
+    outline: none;
+    border-color: orange;
+    box-shadow: 0px 0px 8px rgba(255, 165, 0, 0.8);
+}
+
+/* כפתור ההרשמה */
+.register-btn {
+    background: linear-gradient(45deg, orange, yellow);
+    color: black;
+    font-size: 1.2rem;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.register-btn:hover {
+    background: linear-gradient(45deg, yellow, orange);
+    box-shadow: 0px 0px 10px rgba(255, 165, 0, 0.8);
+}
+
+/* עיצוב הצ'קבוקס */
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    gap: 10px;
+    cursor: pointer;
+    direction: rtl;
+    white-space: nowrap;
+    font-size: 1rem;
+}
+
+.checkbox-container input {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--highlight-color);
+    margin-left: 5px;
+}
+
+/* אופציה להתחברות */
+.login-option {
+    margin-top: 15px;
+    font-size: 1rem;
+}
+
+.login-option a {
+    color: orange;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.login-option a:hover {
+    text-decoration: underline;
+}
+

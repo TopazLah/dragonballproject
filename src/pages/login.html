@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>התחברות</title>
+
+    <link rel="stylesheet" href="/assets/styles/vars.css">
+    <link rel="stylesheet" href="/assets/styles/layout.css">
+    <link rel="stylesheet" href="/assets/styles/login.css">
+</head>
+<body class="login-page">
+
+    <section>
+        <header id="header">
+            <video autoplay loop muted playsinline id="background-video">
+                <source src="/assets/Animated/angry-blue-goku-dragon-ball.3840x2160.mp4" type="video/mp4">
+            </video>
+            <nav>
+                <ul id="kotarot">
+                    <li><a href="/index.html">🏠 דף הבית</a></li>
+                    <li><a href="/pages/characters.html">👥 דמויות הסדרה</a></li>
+                    <li><a href="/pages/seasons.html">🎥 רשימת סדרות</a></li>
+                    <li><a href="/pages/battles.html">⚔ קרבות משמעותיים</a></li>
+                    <li><a href="/pages/saiyan.html">🔥 דרגות הסאיינים</a></li>
+                    <li><a href="/pages/movies.html">🎬 סרטי דרגון בול</a></li>
+                    <li><a href="/pages/odot.html">ℹ️ אודות</a></li>
+                    <li><a href="/pages/registration.html">📝 התחברות/הרשמה למועדון</a></li>
+                </ul>
+            </nav>
+        </header>
+    </section>
+
+    <main class="login-container">
+        <h1>🔒 התחבר לחשבונך</h1>
+        <p>אם כבר נרשמת, פשוט הזן את פרטיך כדי להיכנס.</p>
+
+        <form action="#" method="POST" class="login-form">
+            <label for="email">אימייל:</label>
+            <input type="email" id="email" name="email" placeholder="example@email.com" required>
+
+            <label for="password">סיסמה:</label>
+            <input type="password" id="password" name="password" placeholder="********" required>
+
+            <div class="checkbox-container">
+                <input type="checkbox" id="remember">
+                <label for="remember">זכור אותי</label>
+            </div>
+
+            <button type="submit">🔓 התחבר</button>
+
+            <p class="register-link">אין לך חשבון? <a href="/pages/registration.html">צור חשבון כאן</a> 🔥</p>
+        </form>
+    </main>
+
+</body>
+</html>

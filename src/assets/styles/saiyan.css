@@ -1,0 +1,111 @@
+/* עיצוב כללי */
+body.saiyan-page {
+    font-family: var(--primary-font);
+    text-align: center;
+    background: none;
+    margin: 0;
+    padding: 6rem 2rem; /* הגדלתי את הריווח כדי להזיז את התוכן מעט למטה */
+}
+
+/* וידאו רקע */
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    object-fit: cover;
+}
+
+/* עיצוב כותרות */
+h1 {
+    font-size: 2.5rem;
+    color: var(--highlight-color);
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
+    margin-top: 30px;
+}
+
+h2 {
+    font-size: 2rem;
+    color: var(--highlight-color);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+    margin-top: 60px;
+    border-bottom: 3px solid var(--highlight-color);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* מיכל הכרטיסיות */
+.saiyan-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly; /* מרווח אסתטי יותר בין הפריטים */
+    gap: 30px; /* מרווח גדול יותר בין הכרטיסיות */
+    padding: 30px;
+}
+
+/* כרטיסיות דרגות */
+.saiyan-card {
+    width: 320px; /* הרחבת הכרטיסיות */
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(2px);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s ease-in-out;
+    position: relative;
+}
+
+.saiyan-card img {
+    width: 100%;
+    height: 220px; /* מעט גובה נוסף לתמונות */
+    object-fit: cover;
+    border-bottom: 2px solid var(--highlight-color);
+}
+
+/* כותרות בתוך כרטיסיות */
+.saiyan-card h3 {
+    font-size: 1.4rem;
+    color: var(--highlight-color);
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7);
+    margin: 10px 0;
+}
+
+/* תיאור הדרגה – מוסתר כברירת מחדל */
+.saiyan-info {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+    padding: 0 15px;
+}
+
+/* לחצן תיאור דרגה */
+.saiyan-card label {
+    display: block;
+    cursor: pointer;
+    padding: 12px;
+    background: rgba(0, 0, 0, 0.4);
+    color: var(--highlight-color);
+    font-weight: bold;
+    transition: background 0.3s ease-in-out;
+    border-radius: 0 0 10px 10px;
+}
+
+.saiyan-card label:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* פתיחת תיאור בלחיצה */
+.saiyan-card input[type="checkbox"] {
+    display: none;
+}
+
+.saiyan-card input[type="checkbox"]:checked ~ .saiyan-info {
+    max-height: 250px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    color: black; /* שינוי צבע טקסט התיאור לשחור */
+    border-radius: 0 0 10px 10px;
+}
+

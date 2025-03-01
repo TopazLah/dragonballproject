@@ -1,0 +1,141 @@
+/* 🎨 עיצוב כללי לדף */
+body.seasons-page {
+    font-family: var(--primary-font);
+    background: none;
+    text-align: center;
+    margin: 0;
+    padding: 4rem;
+    
+}
+
+/* 🎥 וידאו רקע */
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    object-fit: cover;
+}
+
+/* 🎯 כותרת ראשית */
+h1 {
+    font-size: 3rem;
+    color: var(--highlight-color);
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0);
+    margin-top: 20px;
+    border-bottom: 3px solid var(--highlight-color);
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+/* 📜 קונטיינר לכל הסדרות */
+.seasons-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    padding: 30px;
+}
+
+/* 📌 כל עונה (details) */
+.season {
+    width: 90%;
+    max-width: 1200px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* 🎭 אנימציה בפתיחת תיבה */
+.season[open] {
+    transform: scale(1.03);
+}
+
+/* 📝 עיצוב כותרת הסדרה (summary) */
+.season-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--highlight-color);
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    border-bottom: 2px solid var(--highlight-color);
+    transition: background 0.3s ease-in-out;
+}
+
+/* ✨ אפקט מעבר על הכותרת */
+.season-title:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* 📌 תוכן הסאגות */
+.season-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+}
+
+/* 🖼️ לוגו הסדרה */
+.season-content img {
+    width: 200px;
+    height: auto;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border: 2px solid var(--highlight-color);
+    box-shadow: 0px 2px 10px rgba(255, 255, 255, 0.2);
+}
+
+/* 📜 קונטיינר של סאגות */
+.season-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+/* 🏆 כל סאגה */
+.saga {
+    width: 600px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 8px rgba(255, 165, 0, 0.5);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* 🎭 אפקט מעבר על סאגה */
+.saga:hover {
+    transform: scale(1.05);
+}
+
+/* 🖼️ תמונות הסאגות */
+.saga img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-bottom: 2px solid var(--highlight-color);
+}
+
+/* 📌 כותרות הסאגות */
+.saga h3 {
+    font-size: 1.4rem;
+    color: var(--highlight-color);
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
+    margin: 10px 0;
+}
+
+/* 📝 טקסט תיאור הסאגה */
+.saga p {
+    font-size: 1rem;
+    padding: 10px;
+    color: var(--text-color);
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 0 0 10px 10px;
+}
+

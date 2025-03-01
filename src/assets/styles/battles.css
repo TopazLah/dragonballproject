@@ -1,0 +1,168 @@
+/* ✨ עיצוב כללי לדף הקרבות */
+body.battles-page {
+    font-family: var(--primary-font);
+    text-align: center;
+    background: none;
+    margin: 0;
+    padding: 1rem;
+}
+
+/* 🎥 וידאו רקע */
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    object-fit: cover;
+}
+
+/* 🏆 קונטיינר ראשי לקרבות */
+.battles-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1500px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* 🔹 עיצוב כותרות */
+h1 {
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: var(--highlight-color);
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.8);
+    margin-top: 120px;
+}
+
+h2 {
+    font-size: 2.2rem;
+    color: var(--highlight-color);
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-size: 1.8rem;
+    color: var(--highlight-color);
+}
+
+/* 📌 עיצוב עונות וסאגות */
+details.season {
+    width: 90%;
+    max-width: 1400px;
+    margin: 15px 0;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    padding: 10px;
+    overflow: hidden;
+}
+
+summary.season-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--highlight-color);
+    background: rgba(0, 0, 0, 0.3);
+    padding: 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+    text-align: center;
+}
+
+summary.season-title:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* 🎭 תוכן סאגות */
+.season-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+}
+
+/* 🎯 כותרות סאגות */
+.saga {
+    width: 95%;
+    max-width: 1300px;
+    margin-bottom: 15px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+/* ⚔️ עיצוב כללי לקרבות */
+.battle {
+    width: 90%;
+    max-width: 1300px;
+    margin: 20px auto;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.9);
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease-in-out;
+}
+
+.battle:hover {
+    transform: scale(1.02);
+}
+
+/* 🎬 עיצוב וידאו */
+.battle iframe {
+    width: 100%;
+    max-width: 100%;
+    height: 550px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+}
+
+/* 🎭 עיצוב כותרות קרבות */
+.battle h3 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--highlight-color);
+    margin-bottom: 10px;
+}
+
+/* 📝 עיצוב תיאורי קרבות */
+.battle p {
+    font-size: 1.3rem;
+    color: white;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    border-radius: 6px;
+}
+
+/* 📱 התאמה למובייל */
+@media (max-width: 1024px) {
+    .battles-container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    details.season {
+        width: 95%;
+    }
+
+    .battle {
+        width: 95%;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.6rem;
+    }
+
+    .battle iframe {
+        height: 350px;
+    }
+}

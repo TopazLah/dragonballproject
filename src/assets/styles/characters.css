@@ -1,0 +1,124 @@
+/* ווידאו רקע */
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    object-fit: cover;
+}
+
+/* מבנה כללי של הדף */
+body.characters-page {
+    background: none;
+    color: var(--text-color);
+    font-family: var(--primary-font);
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* דוחף את התוכן קצת למטה כדי לפתור את בעיית תפריט הניווט */
+#characters-content {
+    padding-top: 7rem;
+}
+
+/* כותרת ראשית */
+#characters-content h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--highlight-color);
+    text-shadow: 4px 4px 12px rgba(0, 0, 0, 0.7);
+    animation: fadeIn 1.5s ease-in-out;
+    margin-bottom: var(--spacing-large);
+}
+
+/* קונטיינר הדמויות */
+.characters-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-xlarge);
+    padding: var(--spacing-xlarge);
+}
+
+/* כרטיסי דמויות */
+.character-card {
+    position: relative;
+    background: rgba(0, 0, 0, 0.1);
+    padding: var(--spacing-medium);
+    border-radius: var(--border-radius);
+    width: 250px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+}
+
+/* אפקט ריחוף */
+.character-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
+    border-color: var(--highlight-color);
+}
+
+/* תמונות הדמויות */
+.character-card img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* אפקט ריחוף על תמונה */
+.character-card:hover img {
+    transform: scale(1.1);
+}
+
+/* כפתור פתיחת מידע */
+.character-card input {
+    display: none;
+}
+
+/* מידע על הדמות */
+.character-info {
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2px);
+    border-radius: var(--border-radius);
+    transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+}
+.character-info p, h2 {
+    color: black;
+}
+
+/* פתיחת מידע בלחיצה */
+.character-card input:checked ~ .character-info {
+    max-height: 500px;
+    opacity: 1;
+}
+
+/* התאמות לניידים */
+@media (max-width: 768px) {
+    .characters-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+.characters-page .characters-container img {
+    height: 250px;   /* גובה אחיד לכל התמונות (ניתן לשנות את הערך לפי הצורך) */
+    width: auto;     /* הרוחב ייקבע אוטומטית לפי יחס התמונה כדי למנוע עיוות */
+    display: block;
+    margin: 0 auto;  /* אופציונלי: ממרכז תמונות צרות יותר אופקית בתוך הקונטיינר */
+}
+.character-card img {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* צל עם הטיה קלה למטה */
+    border-radius: 8px; /* פינות מעוגלות לצל */
+}

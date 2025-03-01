@@ -1,0 +1,40 @@
+:root {
+    /* צבעים */
+    --primary-color: #ff6f61; /* צבע ראשי */
+    --secondary-color: #4a90e2; /* צבע משני */
+    --background-color: #f4f4f9; /* צבע רקע כללי */
+    --text-color: #ffffff; /* צבע טקסט כללי */
+    --highlight-color: #ffd700; /* צבע להדגשות מיוחדות */
+
+    /* גופנים */
+    --primary-font: 'Roboto', sans-serif;
+    --secondary-font: 'Open Sans', sans-serif;
+
+    /* גדלי גופנים - עדכון */
+    --heading-font-size: 3.5rem; /* כותרות ראשיות */
+    --subheading-font-size: 2.5rem; /* כותרות משנה */
+    --text-font-size: 1rem; /* טקסט רגיל */
+    --small-text-size: 0.85rem; /* טקסט קטן */
+
+    /* שוליים ומרווחים */
+    --spacing-small: 8px;
+    --spacing-medium: 16px;
+    --spacing-large: 32px;
+    --spacing-xlarge: 48px;
+
+    /* גבולות ורדיוסים */
+    --border-radius: 8px; /* פינות מעוגלות לאלמנטים */
+    --border-radius-large: 12px; /* פינות מעוגלות יותר */
+
+    /* צללים */
+    --box-shadow-light: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --box-shadow-medium: 0 4px 8px rgba(0, 0, 0, 0.2);
+    --box-shadow-heavy: 0 6px 12px rgba(0, 0, 0, 0.3);
+
+    /* רקעים שקופים */
+    --transparent-dark: rgba(0, 0, 0, 0.3);
+    --transparent-light: rgba(255, 255, 255, 0.3);
+
+    /* מהירות אנימציה */
+    --transition-speed: 0.3s;
+}
