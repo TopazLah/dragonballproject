@@ -169,3 +169,83 @@ h1 {
     background: rgba(0, 0, 0, 0.5);
     transform: scale(1.05);
 }
+
+
+@media (max-width: 768px) {
+    body.seasons-page {
+        padding: 2rem;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        margin-top: 100px;
+    }
+
+    .seasons-container {
+        padding: 15px;
+    }
+
+    .season {
+        width: 95%;
+    }
+
+    .saga {
+        width: 100%;
+    }
+
+    .saga img {
+        height: 130px;
+    }
+
+    .saga h3 {
+        font-size: 1.2rem;
+    }
+
+    .saga p {
+        font-size: 0.9rem;
+    }
+
+    #intro-text {
+        font-size: 1.2rem;
+        max-width: 90%;
+    }
+
+    #main-title {
+        font-size: 2.5rem;
+        padding: 10px;
+    }
+}
+
+/* 📱 התאמה למסכים קטנים במיוחד */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+        margin-top: 80px;
+    }
+
+    .season-title {
+        font-size: 1.5rem;
+        padding: 10px;
+    }
+
+    .saga img {
+        height: 100px;
+    }
+
+    .saga h3 {
+        font-size: 1rem;
+    }
+
+    .saga p {
+        font-size: 0.8rem;
+    }
+
+    #intro-text {
+        font-size: 1rem;
+    }
+
+    #main-title {
+        font-size: 2rem;
+        padding: 8px;
+    }
+}
