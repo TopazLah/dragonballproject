@@ -1,40 +1,114 @@
 :root {
-    /* צבעים */
-    --primary-color: #ff6f61; /* צבע ראשי */
-    --secondary-color: #4a90e2; /* צבע משני */
-    --background-color: #f4f4f9; /* צבע רקע כללי */
-    --text-color: #ffffff; /* צבע טקסט כללי */
-    --highlight-color: #ffd700; /* צבע להדגשות מיוחדות */
+    /* 🎨 צבעים ראשיים */
+    --primary-color: #ffcc00;  /* זהב */
+    --primary-hover: #ffb700;  /* גוון כהה יותר */
+    --primary-light: #ffdd44;  /* גוון בהיר יותר */
+    --secondary-color: #222;  /* אפור כהה */
+    --secondary-light: #333;  /* אפור בהיר */
+    --secondary-dark: #111; /* כהה יותר */
+    --background-color: rgba(0, 0, 0, 0.85); /* רקע כהה */
+    
+    /* 🎆 צבעי ניאון מיוחדים */
+    --neon-blue: #00eaff;
+    --neon-purple: #ad00ff;
+    --neon-orange: #ff6600;
+    --neon-green: #00ff00;
+    --neon-yellow: #ffea00;
+    --neon-pink: #ff007f;
+    --neon-red: #ff1a1a;
+    --neon-cyan: #00ffff;
+    
+    /* 🎨 גוונים נוספים */
+    --dark-gray: #1b1b1b;
+    --medium-gray: #666666;
+    --light-gray: #aaaaaa;
+    --white: #ffffff;
+    
+    /* 🌈 גרדיאנטים */
+    --gradient-primary: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
+    --gradient-secondary: linear-gradient(135deg, var(--neon-orange), var(--neon-yellow));
+    --gradient-dark: linear-gradient(135deg, var(--dark-gray), var(--secondary-light));
+    --gradient-light: linear-gradient(135deg, var(--light-gray), var(--white));
+    --gradient-fire: linear-gradient(135deg, var(--neon-orange), var(--neon-red));
+    --gradient-electric: linear-gradient(135deg, var(--neon-blue), var(--neon-yellow));
 
-    /* גופנים */
-    --primary-font: 'Roboto', sans-serif;
-    --secondary-font: 'Open Sans', sans-serif;
-
-    /* גדלי גופנים - עדכון */
-    --heading-font-size: 3.5rem; /* כותרות ראשיות */
-    --subheading-font-size: 2.5rem; /* כותרות משנה */
-    --text-font-size: 1rem; /* טקסט רגיל */
-    --small-text-size: 0.85rem; /* טקסט קטן */
-
-    /* שוליים ומרווחים */
-    --spacing-small: 8px;
-    --spacing-medium: 16px;
-    --spacing-large: 32px;
-    --spacing-xlarge: 48px;
-
-    /* גבולות ורדיוסים */
-    --border-radius: 8px; /* פינות מעוגלות לאלמנטים */
-    --border-radius-large: 12px; /* פינות מעוגלות יותר */
-
-    /* צללים */
-    --box-shadow-light: 0 2px 4px rgba(0, 0, 0, 0.1);
-    --box-shadow-medium: 0 4px 8px rgba(0, 0, 0, 0.2);
-    --box-shadow-heavy: 0 6px 12px rgba(0, 0, 0, 0.3);
-
-    /* רקעים שקופים */
-    --transparent-dark: rgba(0, 0, 0, 0.3);
-    --transparent-light: rgba(255, 255, 255, 0.3);
-
-    /* מהירות אנימציה */
-    --transition-speed: 0.3s;
+    /* 🏆 רקעים שקופים */
+    --background-overlay: rgba(0, 0, 0, 0.5);
+    --blur-background: rgba(0, 0, 0, 0.7);
+    --glass-effect-bg: rgba(255, 255, 255, 0.08);
+    
+    /* 🔤 טיפוגרפיה */
+    --primary-font: 'Alef', sans-serif;
+    --secondary-font: 'Assistant', sans-serif;
+    --title-font-size: 3rem;
+    --subtitle-font-size: 2.2rem;
+    --body-font-size: 1.3rem;
+    --menu-font-size: 1.5rem;
+    --small-text-size: 1.1rem;
+    --extra-small-text-size: 0.9rem;
+    
+    /* 🛠️ ריווחים */
+    --section-padding: 80px;
+    --element-spacing: 25px;
+    --button-padding: 18px 32px;
+    --menu-item-spacing: 45px;
+    --content-width: 92%;
+    --max-width: 1700px;
+    --header-height: 85px;
+    
+    /* 🌀 שקיפות וטשטוש */
+    --glass-effect: rgba(255, 255, 255, 0.12);
+    --blur-effect: blur(20px);
+    --card-opacity: 0.9;
+    
+    /* 🌟 גבולות וצללים */
+    --border-radius: 15px;
+    --button-radius: 12px;
+    --box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.7);
+    --box-shadow-light: 0px 4px 12px rgba(0, 0, 0, 0.4);
+    --neon-box-shadow: 0px 0px 25px var(--neon-blue);
+    
+    /* ⚡ אנימציות */
+    --transition-speed: 0.3s ease-in-out;
+    --fast-transition: 0.2s ease-in-out;
+    --slow-transition: 0.5s ease-in-out;
+    --hover-brightness: brightness(1.35);
+    --text-neon-glow: text-shadow: 0px 0px 12px var(--neon-purple);
+    
+    /* 🔥 אפקטי ריחוף */
+    --hover-glow: 0px 0px 18px var(--neon-orange);
+    --hover-scale: scale(1.1);
+    --hover-shadow: 0px 0px 28px var(--neon-green);
+    --hover-border-glow: 3px solid var(--neon-cyan);
+    --hover-blur: blur(12px);
+    
+    /* 🏗️ ניווט ותפריט */
+    --navbar-height: 80px;
+    --navbar-blur: blur(12px);
+    --navbar-opacity: 0.95;
+    --navbar-shadow: 0px 0px 18px rgba(0, 0, 0, 0.6);
+    
+    /* 📌 כפתורים */
+    --button-primary-bg: var(--gradient-primary);
+    --button-primary-hover-bg: var(--gradient-fire);
+    --button-secondary-bg: var(--gradient-dark);
+    --button-text-color: var(--white);
+    --button-shadow: 0px 4px 14px rgba(0, 0, 0, 0.5);
+    
+    /* 🖼️ כרטיסים וקופסאות */
+    --card-background: var(--glass-effect-bg);
+    --card-border: 2px solid rgba(255, 255, 255, 0.2);
+    --card-shadow: 0px 6px 24px rgba(0, 0, 0, 0.6);
+    --card-hover-glow: 0px 0px 20px var(--neon-pink);
+    
+    /* 📜 טקסט וקישורים */
+    --link-color: var(--neon-blue);
+    --link-hover-color: var(--neon-purple);
+    --text-highlight: var(--neon-yellow);
+    
+    /* 🏆 הגדרות מתקדמות */
+    --footer-background: rgba(0, 0, 0, 0.65);
+    --scrollbar-track: var(--dark-gray);
+    --scrollbar-thumb: var(--neon-blue);
+    --scrollbar-thumb-hover: var(--neon-purple);
 }

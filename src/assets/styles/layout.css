@@ -1,108 +1,105 @@
-/* חסימת כל השפעה חיצונית על #kotarot */
-#kotarot, #kotarot * {
-    all: unset; /* מסיר כל עיצוב קודם */
-}
-
-/* תפריט הניווט - עיצוב ייחודי ומודרני */
-#kotarot {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap; /* מאפשר גלישה בשורות במקרה הצורך */
-    gap: 12px; /* ריווח בין הכפתורים */
-    background: rgba(0, 0, 0, 0.4); /* רקע שקוף */
-    backdrop-filter: blur(10px); /* טשטוש רקע */
-    padding: 18px 100%;
-    border-radius: 15px;
+/* הגנה מקבצי CSS חיצוניים */
+#nav-container {
+    all: unset; /* מניעת ירושה מקבצים חיצוניים */
     position: fixed;
-    top: 0px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1000;
+    top: 0;
+    left: 0;
     width: 100%;
-    max-width: 90%;
+    background: rgba(0, 0, 0, 0.3); /* רקע שקוף */
+    backdrop-filter: blur(10px); /* טשטוש רקע */
+    z-index: 1000;
+    padding: 12px 0;
+    display: flex;
+    justify-content: center;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
 }
 
-/* רשימת הכפתורים */
-#kotarot li {
+#kotarot {
+    all: unset;
     list-style: none;
-    margin: 0;
+    display: flex;
+    gap: 20px;
     padding: 0;
+    margin: 0;
 }
 
-/* כפתורי הניווט */
+#kotarot li {
+    all: unset;
+    display: inline-block;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
+    position: relative;
+}
+
+/* עיצוב הכפתורים */
 #kotarot li a {
+    all: unset;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.9);
+    padding: 14px 22px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(50, 50, 50, 0.6));
     display: flex;
     align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    font-size: 1rem;
-    font-weight: bold;
-    color: #ffffff;
-    background: rgba(0, 0, 0, 0.3); /* שחור שקוף */
-    padding: 12px 18px;
-    border-radius: 10px;
-    transition: background 0.3s ease-in-out, transform 0.2s;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    gap: 8px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: inset 0px 0px 10px rgba(255, 255, 255, 0.1);
+    transition: all 0.4s ease-in-out;
 }
 
-/* ✨ אפקט Hover חדש - יותר כתום ויותר שקוף ✨ */
+/* ✨ אפקט hover חדשני */
+#kotarot li a::before {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(255, 165, 0, 0.5);
+    transition: width 0.4s ease-in-out;
+}
+
+#kotarot li a:hover::before {
+    width: 100%;
+}
+
+/* שינוי צבע והארה פנימית */
+#kotarot li:hover {
+    transform: translateY(-5px);
+}
+
 #kotarot li a:hover {
-    background: rgba(255, 140, 0, 0.3); /* כתום בהיר ושקוף יותר */
-    transform: scale(1.07);
-    box-shadow: 0 0 15px rgba(255, 140, 0, 0.6); /* זוהר קל סביב הכפתור */
+    color: white;
+    box-shadow: 0px 0px 15px rgba(255, 165, 0, 0.8), 0px 0px 5px rgba(255, 255, 255, 0.3);
 }
 
+/* לחיצה */
+#kotarot li a:active {
+    transform: scale(0.92);
+}
 
-
-/* התאמות רספונסיביות למסכים קטנים */
-@media (max-width: 1024px) {
-    body {
-        font-size: 16px; /* מקטין מעט את הטקסט במסכים בינוניים */
+/* התאמות רספונסיביות */
+@media (max-width: 1200px) {
+    #kotarot {
+        gap: 12px;
     }
     
-    #kotarot {
-        padding: 8px;
-    }
-
-    .container {
-        width: 90%; /* מוודא שהתוכן לא יוצא מהמסך */
-        margin: auto;
+    #kotarot li a {
+        font-size: 16px;
+        padding: 12px 18px;
     }
 }
 
-@media (max-width: 768px) {
-    body {
-        font-size: 14px; /* מקטין עוד יותר לניידים */
+@media (max-width: 900px) {
+    #kotarot {
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
-    #kotarot {
-        flex-direction: column;
+    #kotarot li {
+        flex-basis: 45%;
         text-align: center;
-        padding: 12px 0;
-    }
-
-    .container {
-        width: 95%;
-    }
-
-    img {
-        max-width: 100%; /* מבטיח שהתמונות לא יצאו מגבולות המסך */
-        height: auto;
-    }
-}
-
-@media (max-width: 480px) {
-    body {
-        font-size: 12px;
-    }
-
-    .container {
-        width: 100%;
-        padding: 10px;
-    }
-
-    #kotarot {
-        font-size: 14px;
     }
 }
