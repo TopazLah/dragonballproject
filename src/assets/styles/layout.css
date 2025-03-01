@@ -250,11 +250,7 @@ body::before {
         display: flex;
         animation: slideIn 0.3s ease-in-out;
     }
-    @media (min-width: 1025px) {
-        #menu-icon {
-            display: none !important;
-        }
-    }
+    
 
     /* יצירת אנימציה לפתיחת התפריט */
     @keyframes slideIn {
