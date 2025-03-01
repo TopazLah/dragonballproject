@@ -184,3 +184,105 @@ footer {
     color: white;
     margin-top: 50px;
 }
+/* 📱 התאמה למסכים קטנים וניידים */
+@media (max-width: 1024px) {
+    
+    /* התאמת מבנה כללי */
+    body.home-page {
+        padding: 3rem;
+    }
+
+    /* התאמת הכותרות */
+    h1, h2 {
+        font-size: 1.8rem;
+    }
+
+    /* כפתורי קריאה לפעולה */
+    .cta-button {
+        font-size: 1.2rem;
+        padding: 10px 25px;
+    }
+
+    /* התאמת גלריה */
+    .gallery-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .gallery-item img {
+        width: 90%;
+        height: auto;
+    }
+
+    /* התאמת רשימת העובדות */
+    .facts {
+        width: 95%;
+    }
+
+    .facts li {
+        font-size: 1rem;
+        padding: 8px;
+    }
+
+    /* התאמת ציר הזמן */
+    .timeline-item {
+        width: 90%;
+        font-size: 1rem;
+    }
+
+    .timeline-item .year {
+        font-size: 1.3rem;
+    }
+
+    /* התאמת החדשות */
+    .news {
+        width: 95%;
+    }
+
+    .news li {
+        font-size: 1rem;
+    }
+
+    /* התאמת תחתית הדף */
+    footer {
+        font-size: 1rem;
+    }
+}
+
+/* 📱 התאמה לטלפונים קטנים במיוחד */
+@media (max-width: 600px) {
+    
+    /* התאמת הכותרות */
+    h1, h2 {
+        font-size: 1.5rem;
+    }
+
+    /* התאמת כפתורים */
+    .cta-button {
+        font-size: 1rem;
+        padding: 8px 20px;
+    }
+
+    /* התאמת תוכן כללי */
+    .facts, .news {
+        padding: 15px;
+    }
+
+    .facts li, .news li {
+        font-size: 0.9rem;
+        padding: 6px;
+    }
+
+    .timeline-item {
+        font-size: 0.9rem;
+    }
+
+    .timeline-item .year {
+        font-size: 1.2rem;
+    }
+
+    /* התאמת תחתית הדף */
+    footer {
+        font-size: 0.9rem;
+    }
+}
