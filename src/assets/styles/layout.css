@@ -160,3 +160,111 @@ body::before {
     opacity: 0.9; /* מעט שקוף כדי שהטקסט יבלוט */
     pointer-events: none; /* מונע אינטראקציה עם הוידאו */
 }
+/* 📌 התנהגות כללית למסכים קטנים */
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* 🏠 ניווט – התאמה למובייל */
+@media (max-width: 1024px) {
+    #kotarot {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+        padding: 10px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #kotarot li {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* 📱 ניווט למסכים מתחת ל-768px (טלפונים) */
+@media (max-width: 768px) {
+    #kotarot {
+        grid-template-columns: 1fr;
+        padding: 5px;
+        gap: 6px;
+    }
+
+    #kotarot li a {
+        font-size: 1rem;
+        padding: 10px;
+    }
+}
+
+
+
+/* 🔹 כל הכותרות יוקטנו במובייל */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+}
+
+/* 📝 טקסט כללי – התאמה לטלפונים */
+@media (max-width: 480px) {
+    p {
+        font-size: 1rem;
+        line-height: 1.4;
+        text-align: center;
+        padding: 5px;
+    }
+}
+
+/* 🏆 כפתורים – התאמה לכל סוגי המובייל */
+@media (max-width: 600px) {
+    button {
+        font-size: 1rem;
+        padding: 12px;
+    }
+}
+
+/* 📱 התאמה מיוחדת לאייפדים */
+@media (max-width: 1024px) and (min-width: 768px) {
+    .login-container,
+    .register-container {
+        width: 75%;
+    }
+}
+
+/* 🎭 תיקוני גלילה – מניעת גלילה אופקית */
+html, body {
+    overflow-x: hidden;
+}
+
+/* 🔗 התאמה לטפסים – גודל אחיד בניידים */
+@media (max-width: 768px) {
+    input,
+    textarea {
+        font-size: 1rem;
+        padding: 10px;
+    }
+}
+
+/* 🚀 אנימציות קלות במעבר */
+@media (max-width: 768px) {
+    .hover-effect {
+        transition: all 0.3s ease-in-out;
+    }
+}
+
+/* 🔥 כפתורי ניווט מעוגלים יותר */
+@media (max-width: 480px) {
+    #kotarot li a {
+        border-radius: 10px;
+        padding: 12px;
+    }
+}
