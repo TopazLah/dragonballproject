@@ -1,4 +1,4 @@
-/* מבנה כללי של הדף */
+/* 🎨 עיצוב כללי לדף הדמויות */
 body.characters-page {
     background: none;
     color: var(--text-color);
@@ -8,147 +8,137 @@ body.characters-page {
     padding: 0;
 }
 
-
-
-/* כותרת ראשית */
+/* 🎭 כותרת ראשית */
 #characters-content h1 {
     font-size: var(--title-font-size);
     font-weight: bold;
     color: var(--primary-color);
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(0, 0, 0, 0.3);
     text-shadow: 4px 4px 12px rgba(0, 0, 0, 0.7);
     animation: fadeIn 1.5s ease-in-out;
     margin-top: 200px;
+    padding: 10px;
+    border-radius: 10px;
 }
 
-/* קונטיינר הדמויות */
+/* 🏆 קונטיינר הדמויות */
 .characters-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: var(--element-spacing);
-    padding: 30px;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1400px;
+    margin: auto;
 }
 
-/* כרטיסי דמויות */
+/* 🔹 כרטיסי דמויות */
 .character-card {
     position: relative;
     background: var(--card-background);
-    padding: var(--element-spacing);
-    border-radius: var(--border-radius);
-    width: 250px;
-    overflow: hidden;
+    padding: 15px;
+    border-radius: 15px;
+    width: 280px;
     text-align: center;
     box-shadow: var(--box-shadow-light);
-    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     border: var(--card-border);
     cursor: pointer;
 }
 
-/* אפקט ריחוף */
+/* 🎯 אפקט ריחוף */
 .character-card:hover {
-    transform: var(--hover-scale);
-    box-shadow: var(--hover-shadow);
-    border-color: var(--highlight-color);
+    transform: scale(1.05);
+    box-shadow: 0px 0px 25px rgba(255, 165, 0, 0.6);
 }
 
-/* תמונות הדמויות */
+/* 🖼️ תמונות הדמויות */
 .character-card img {
     width: 100%;
     height: auto;
-    border-radius: var(--border-radius);
-    transition: transform var(--transition-speed);
-    box-shadow: var(--box-shadow);
+    max-height: 400px;
+    border-radius: 15px;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
 }
 
-/* אפקט ריחוף על תמונה */
+/* 🌟 אפקט ריחוף על תמונה */
 .character-card:hover img {
     transform: scale(1.1);
 }
 
-/* כפתור פתיחת מידע */
+/* 🎭 תיבת מידע */
+.character-info {
+    padding: 12px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+/* 📝 כותרות דמויות */
+.character-info h2 {
+    font-size: 1.6rem;
+    color: var(--highlight-color);
+    text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.5);
+}
+
+/* 📝 טקסט דמויות */
+.character-info p {
+    font-size: 1.2rem;
+    color: var(--text-highlight);
+    word-wrap: break-word;
+    white-space: normal;
+    padding: 10px;
+}
+
+/* ⚡ פתיחת מידע בלחיצה */
 .character-card input {
     display: none;
 }
 
-/* מידע על הדמות */
-.character-info {
-    padding: 15px;
-    background: var(--background-overlay);
-    backdrop-filter: var(--blur-effect);
-    border-radius: var(--border-radius);
-    transition: max-height var(--slow-transition), opacity var(--slow-transition);
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-}
-
-/* צבע טקסט מידע */
-.character-info p, h2 {
-    color: var(--text-highlight);
-}
-
-/* פתיחת מידע בלחיצה */
 .character-card input:checked ~ .character-info {
-    max-height: 500px;
+    max-height: 200px;
     opacity: 1;
 }
 
-/* התאמות לניידים */
+/* 📱 התאמה לניידים */
 @media (max-width: 768px) {
-    .characters-container {
-        flex-direction: column;
-        align-items: center;
-    }
-}
-
-.characters-page .characters-container img {
-    height: 250px;
-    width: auto;
-    display: block;
-    margin: 0 auto;
-}
-
-.character-card img {
-    box-shadow: var(--box-shadow-light);
-    border-radius: var(--border-radius);
-}
-/* 📱 התאמה מלאה לניידים */
-@media (max-width: 768px) {
-    /* התאמת כותרות */
-    #characters-content h1 {
-        font-size: 2.2rem;
-        margin-top: 80px;
-        text-align: center;
-        width: 100%;
-    }
-
-    /* ריווח ותיקון תצוגה */
     .characters-container {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 20px;
+        gap: 15px;
         width: 100%;
-        padding: 10px;
-    }
-
-    /* כרטיסי דמויות */
-    .character-card {
-        width: 95%; /* פריסה רחבה יותר */
-        max-width: 400px; /* גודל מקסימלי נוח */
         padding: 15px;
     }
 
-    /* תמונות הדמויות */
+    /* 📌 התאמות כותרת */
+    #characters-content h1 {
+        font-size: 2.2rem;
+        margin-top: 80px;
+        text-align: center;
+        width: 90%;
+    }
+
+    /* 🏆 כרטיסי דמויות */
+    .character-card {
+        width: 90%;
+        max-width: 350px;
+        padding: 15px;
+    }
+
+    /* 🎭 תמונות הדמויות */
     .character-card img {
         max-width: 100%;
         height: auto;
-        border-radius: 10px;
+        border-radius: 12px;
     }
 
-    /* מניעת חיתוך טקסט */
+    /* 📝 מניעת חיתוך טקסט */
     .character-info {
         width: 100%;
         text-align: center;
