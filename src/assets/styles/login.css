@@ -161,19 +161,37 @@ button:hover {
 /* 📱 התאמה לניידים */
 @media (max-width: 768px) {
     .login-container {
-        width: 98%;
-        padding: 25px;
+        width: 95%;
+        padding: 30px;
+        max-width: 500px;
+        border-radius: 15px;
     }
 
     .login-header h1 {
-        font-size: 1.9rem;
+        font-size: 2rem;
     }
 
     .login-logo {
-        width: 85px;
+        width: 90px;
+    }
+
+    .input-group input {
+        width: 100%;
+        font-size: 1rem;
+        padding: 16px;
+    }
+
+    .checkbox-container {
+        font-size: 1.1rem;
     }
 
     button {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
+        padding: 16px;
+        border-radius: 12px;
+    }
+
+    .register-link {
+        font-size: 1rem;
     }
 }
