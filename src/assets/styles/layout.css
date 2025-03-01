@@ -160,7 +160,7 @@ body::before {
     opacity: 0.9; /* מעט שקוף כדי שהטקסט יבלוט */
     pointer-events: none; /* מונע אינטראקציה עם הוידאו */
 }
-/* 📱 התאמת תפריט הניווט לניידים בלבד */
+/* 📱 תיקון מיקום תפריט הניווט בניידים */
 @media (max-width: 1024px) {
     #nav-container {
         position: fixed !important;
@@ -174,6 +174,7 @@ body::before {
         flex-direction: column !important;
         align-items: center !important;
         padding: 0.5rem !important;
+        transform: translateY(0) !important; /* מבטיח שהתפריט יתחיל במקום הנכון */
     }
 
     /* כפתור ☰ לפתיחה/סגירה */
@@ -183,8 +184,8 @@ body::before {
         cursor: pointer !important;
         padding: 10px !important;
         position: absolute !important;
-        top: 10px !important;
-        right: 20px !important;
+        top: 15px !important;
+        right: 15px !important;
         z-index: 1100 !important;
     }
 
@@ -197,27 +198,26 @@ body::before {
     #kotarot {
         display: none !important;
         flex-direction: column !important;
-        width: 100% !important;
+        width: 90% !important;
         text-align: center !important;
         padding: 10px 0 !important;
+        margin-top: 60px !important; /* דוחף את התפריט למקום הנכון */
     }
 
     /* כאשר ה-checkbox מסומן, התפריט מוצג */
     #menu-toggle:checked + .menu-icon + #kotarot {
         display: flex !important;
+        animation: slideIn 0.3s ease-in-out !important; /* אנימציה חלקה */
     }
 
-    /* עיצוב פריטי התפריט */
-    #kotarot li {
-        width: 90% !important;
-        margin: 5px 0 !important;
-    }
-
-    #kotarot a {
-        display: block !important;
-        padding: 10px !important;
-        background: rgba(255, 255, 255, 0.2) !important;
-        border-radius: 8px !important;
+    /* יצירת אנימציה לפתיחת התפריט */
+    @keyframes slideIn {
+        from {
+            transform: translateY(-100%) !important;
+        }
+        to {
+            transform: translateY(0) !important;
+        }
     }
 }
 
