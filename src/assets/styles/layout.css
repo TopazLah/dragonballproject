@@ -189,78 +189,65 @@ body::before {
     background: rgba(0, 0, 0, 0.6);
     transform: scale(1.02);
 }
+
 /* 📱 תיקון מיקום תפריט הניווט בניידים */
 @media (max-width: 1024px) {
     #nav-container {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        background: rgba(0, 0, 0, 0.8);
-        backdrop-filter: blur(10px);
-        z-index: 1000;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 0.5rem;
-        transform: translateY(0); /* מבטיח שהתפריט יתחיל במקום הנכון */
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        background: rgba(0, 0, 0, 0.8) !important;
+        backdrop-filter: blur(10px) !important;
+        z-index: 1000 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        padding: 0.5rem !important;
+        transform: translateY(0) !important; /* מבטיח שהתפריט יתחיל במקום הנכון */
     }
 
     /* כפתור ☰ לפתיחה/סגירה */
     .menu-icon {
-        font-size: 2rem;
-        color: white;
-        cursor: pointer;
-        padding: 10px;
-        position: absolute;
-        top: 15px;
-        right: 15px;
-        z-index: 1100;
-        background: rgba(0, 0, 0, 0.7);
-        border-radius: 5px;
-        transition: background 0.3s ease;
+        font-size: 2rem !important;
+        color: white !important;
+        cursor: pointer !important;
+        padding: 10px !important;
+        position: absolute !important;
+        top: 15px !important;
+        right: 15px !important;
+        z-index: 1100 !important;
     }
-
-    /* שינוי צבע hover לאייקון */
-    .menu-icon:hover {
-        background: rgba(255, 165, 0, 0.7);
-    }
-    
 
     /* הסתרת checkbox */
     #menu-toggle {
-        display: none; 
+        display: none !important;
     }
 
     /* הסתרת התפריט כברירת מחדל */
     #kotarot {
-        display: none;
-        flex-direction: column;
-        width: 90%;
-        text-align: center;
-        padding: 10px 0;
-        margin-top: 60px; /* דוחף את התפריט למקום הנכון */
-        background: rgba(0, 0, 0, 0.9);
-        border-radius: 8px;
-        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+        display: none !important;
+        flex-direction: column !important;
+        width: 90% !important;
+        text-align: center !important;
+        padding: 10px 0 !important;
+        margin-top: 60px !important; /* דוחף את התפריט למקום הנכון */
     }
 
     /* כאשר ה-checkbox מסומן, התפריט מוצג */
     #menu-toggle:checked + .menu-icon + #kotarot {
-        display: flex;
-        animation: slideIn 0.3s ease-in-out;
+        display: flex !important;
+        animation: slideIn 0.3s ease-in-out !important; /* אנימציה חלקה */
     }
-    
 
     /* יצירת אנימציה לפתיחת התפריט */
     @keyframes slideIn {
         from {
-            transform: translateY(-100%);
-            opacity: 0;
+            transform: translateY(-100%) !important;
         }
         to {
-            transform: translateY(0);
-            opacity: 1;
+            transform: translateY(0) !important;
         }
     }
 }
+
