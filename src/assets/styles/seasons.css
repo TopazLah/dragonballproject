@@ -5,29 +5,18 @@ body.seasons-page {
     text-align: center;
     margin: 0;
     padding: 4rem;
-    
-}
-
-/* 🎥 וידאו רקע */
-#background-video {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    object-fit: cover;
+    color: var(--text-color);
 }
 
 /* 🎯 כותרת ראשית */
 h1 {
     font-size: 3rem;
-    color: var(--highlight-color);
-    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0);
-    margin-top: 20px;
-    border-bottom: 3px solid var(--highlight-color);
+    color: var(--primary-color);
+    text-shadow: 3px 3px 8px var(--shadow-dark);
+    margin-top: 120px;
+    border-bottom: 3px solid var(--primary-color);
     display: inline-block;
-    padding-bottom: 10px;
+    padding-bottom: 5px;
 }
 
 /* 📜 קונטיינר לכל הסדרות */
@@ -43,10 +32,10 @@ h1 {
 .season {
     width: 90%;
     max-width: 1200px;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.3); /* שקיפות גבוהה */
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4);
+    box-shadow: var(--card-shadow);
     transition: transform 0.3s ease-in-out;
 }
 
@@ -59,11 +48,11 @@ h1 {
 .season-title {
     font-size: 1.8rem;
     font-weight: bold;
-    color: var(--highlight-color);
+    color: var(--secondary-color);
     padding: 15px;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.4); /* רקע שקוף לכותרת */
     cursor: pointer;
-    border-bottom: 2px solid var(--highlight-color);
+    border-bottom: 2px solid var(--secondary-color);
     transition: background 0.3s ease-in-out;
 }
 
@@ -86,8 +75,8 @@ h1 {
     height: auto;
     margin-bottom: 15px;
     border-radius: 10px;
-    border: 2px solid var(--highlight-color);
-    box-shadow: 0px 2px 10px rgba(255, 255, 255, 0.2);
+    border: 2px solid var(--secondary-color);
+    box-shadow: var(--image-shadow);
 }
 
 /* 📜 קונטיינר של סאגות */
@@ -102,10 +91,10 @@ h1 {
 /* 🏆 כל סאגה */
 .saga {
     width: 600px;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.3); /* רקע שקוף גבוה */
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0px 4px 8px rgba(255, 165, 0, 0.5);
+    box-shadow: var(--card-shadow-light);
     transition: transform 0.3s ease-in-out;
 }
 
@@ -119,14 +108,14 @@ h1 {
     width: 100%;
     height: 160px;
     object-fit: cover;
-    border-bottom: 2px solid var(--highlight-color);
+    border-bottom: 2px solid var(--secondary-color);
 }
 
 /* 📌 כותרות הסאגות */
 .saga h3 {
     font-size: 1.4rem;
     color: var(--highlight-color);
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
+    text-shadow: var(--text-shadow);
     margin: 10px 0;
 }
 
@@ -134,8 +123,49 @@ h1 {
 .saga p {
     font-size: 1rem;
     padding: 10px;
-    color: var(--text-color);
-    background: rgba(0, 0, 0, 0.5);
+    color: var(--secondary-color);
+    background: rgba(0, 0, 0, 0.3); /* טקסט עם רקע שקוף */
     border-radius: 0 0 10px 10px;
 }
+/* ✨ עיצוב טקסט פתיחה */
+#intro-text {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--tertiary-color);
+    background: rgba(0, 0, 0, 0.3); /* רקע כהה שקוף */
+    padding: 10px 15px;
+    border-radius: 8px;
+    max-width: 80%;
+    margin: 20px auto;
+    text-align: center;
+    box-shadow: var(--card-shadow-light);
+    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+}
 
+/* ✨ אפקט מעבר כשמעבירים עכבר */
+#intro-text:hover {
+    background: rgba(0, 0, 0, 0.5);
+    transform: scale(1.03);
+}
+
+/* 🎭 עיצוב כותרת ראשית */
+#main-title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--highlight-color);
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7); /* אפקט צל לכותרת */
+    text-align: center;
+    margin-top: 140px;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.3); /* רקע כהה שקוף */
+    border-radius: 12px;
+    display: inline-block;
+    box-shadow: var(--card-shadow-light);
+    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+
+/* ✨ אפקט מעבר כשמעבירים עכבר */
+#main-title:hover {
+    background: rgba(0, 0, 0, 0.5);
+    transform: scale(1.05);
+}

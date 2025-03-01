@@ -3,7 +3,8 @@
     --primary-color: #ffcc00;  /* זהב */
     --primary-hover: #ffb700;  /* גוון כהה יותר */
     --primary-light: #ffdd44;  /* גוון בהיר יותר */
-    --secondary-color: #222;  /* אפור כהה */
+    --secondary-color: #a3c8ff;  /* אפור כהה */
+    --tertiary-color: #282828;
     --secondary-light: #333;  /* אפור בהיר */
     --secondary-dark: #111; /* כהה יותר */
     --background-color: rgba(0, 0, 0, 0.85); /* רקע כהה */

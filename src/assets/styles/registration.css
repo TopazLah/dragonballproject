@@ -1,146 +1,155 @@
-/* עיצוב כללי */
+/* 🎨 עיצוב כללי לדף ההרשמה */
 body.registration-page {
     font-family: var(--primary-font);
     text-align: center;
-    color: var(--text-color);
+    background: none;
     margin: 0;
     padding: 0;
-    position: relative;
 }
 
-/* רקע וידאו */
-.video-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    z-index: -1;
-}
 
-.video-container video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
 
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.4);
-}
-
-/* מיכל ההרשמה */
+/* 📌 קונטיינר טופס הרשמה */
 .registration-container {
+    position: relative;
     max-width: 500px;
-    background: rgba(0, 0, 0, 0.8);
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 20px rgba(255, 165, 0, 0.5);
+    background: rgba(0, 0, 0, 0.7);
     margin: 100px auto;
-    animation: fadeIn 1.2s ease-in-out;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(255, 165, 0, 0.8);
+    animation: fadeIn 1s ease-in-out;
+    margin-top: 200px;
 }
 
-/* אנימציה של הטופס */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+/* 🏆 כותרת דף */
+#registration-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-shadow: 3px 3px 10px rgba(255, 165, 0, 0.7);
+    margin-bottom: 15px;
 }
 
-/* טופס ההרשמה */
+/* 🔹 טקסט הקדמה */
+.registration-intro {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+/* 📝 עיצוב טופס */
 .registration-form {
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
 
-/* שדות הקלט */
-.registration-form input,
-.registration-form select {
-    width: 100%;
-    padding: 12px;
-    border-radius: 5px;
-    border: 1px solid var(--highlight-color);
-    background: rgba(255, 255, 255, 0.2);
-    color: white;
-    font-size: 1rem;
-    transition: 0.3s;
+/* 🎯 תיבות קלט */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
 }
 
-/* עיצוב רשימת הדמויות */
-.character-select {
-    font-family: var(--primary-font);
+.form-group label {
     font-size: 1.1rem;
-    color: var(--text-color);
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 5px;
 }
 
-/* כשהמשתמש מקליד */
-.registration-form input:focus,
-.registration-form select:focus {
-    outline: none;
-    border-color: orange;
-    box-shadow: 0px 0px 8px rgba(255, 165, 0, 0.8);
-}
-
-/* כפתור ההרשמה */
-.register-btn {
-    background: linear-gradient(45deg, orange, yellow);
-    color: black;
-    font-size: 1.2rem;
-    padding: 12px;
+.form-group input,
+.form-group select {
+    font-size: 1rem;
+    padding: 10px;
     border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.8);
     transition: 0.3s ease-in-out;
 }
 
-.register-btn:hover {
-    background: linear-gradient(45deg, yellow, orange);
-    box-shadow: 0px 0px 10px rgba(255, 165, 0, 0.8);
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    box-shadow: 0px 0px 10px rgba(255, 165, 0, 0.7);
+    background: rgba(255, 255, 255, 1);
 }
 
-/* עיצוב הצ'קבוקס */
+/* ✅ עיצוב תנאי שימוש */
+.checkbox-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
 .checkbox-container {
     display: flex;
     align-items: center;
-    justify-content: right;
-    gap: 10px;
+    font-size: 1rem;
+    color: var(--primary-color);
     cursor: pointer;
-    direction: rtl;
-    white-space: nowrap;
-    font-size: 1rem;
 }
 
-.checkbox-container input {
-    width: 18px;
-    height: 18px;
-    accent-color: var(--highlight-color);
-    margin-left: 5px;
-}
-
-/* אופציה להתחברות */
-.login-option {
-    margin-top: 15px;
-    font-size: 1rem;
-}
-
-.login-option a {
-    color: orange;
+.checkbox-container a {
+    color: var(--primary-color);
     text-decoration: none;
     font-weight: bold;
 }
 
-.login-option a:hover {
-    text-decoration: underline;
+.checkbox-container input {
+    margin-left: 10px;
+    width: 16px;
+    height: 16px;
 }
 
+/* 🚀 כפתור הרשמה */
+.register-btn {
+    background: linear-gradient(45deg, rgba(255, 140, 0, 0.9), rgba(255, 69, 0, 0.9));
+    color: white;
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0 0 15px rgba(255, 165, 0, 0.7);
+}
+
+.register-btn:hover {
+    background: linear-gradient(45deg, rgba(255, 69, 0, 1), rgba(255, 140, 0, 1));
+    box-shadow: 0 0 25px rgba(255, 165, 0, 1);
+    transform: scale(1.05);
+}
+
+/* 🔗 התחברות */
+.login-option {
+    margin-top: 30px;
+    font-size: 1.1rem;
+    color: var(--primary-color);
+}
+
+.login-option a {
+    color: var(--primary-color);
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+}
+
+.login-option a:hover {
+    text-shadow: 0px 0px 8px rgba(255, 165, 0, 0.8);
+}
+
+/* ✨ אנימציות */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

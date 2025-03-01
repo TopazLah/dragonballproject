@@ -1,111 +1,143 @@
-/* עיצוב כללי */
+/* 🌟 עיצוב כללי לדף הדרגות */
 body.saiyan-page {
     font-family: var(--primary-font);
     text-align: center;
     background: none;
     margin: 0;
-    padding: 6rem 2rem; /* הגדלתי את הריווח כדי להזיז את התוכן מעט למטה */
+    padding: 0;
 }
 
-/* וידאו רקע */
-#background-video {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    object-fit: cover;
-}
 
-/* עיצוב כותרות */
-h1 {
-    font-size: 2.5rem;
-    color: var(--highlight-color);
-    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
-    margin-top: 30px;
-}
-
-h2 {
-    font-size: 2rem;
-    color: var(--highlight-color);
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
-    margin-top: 60px;
-    border-bottom: 3px solid var(--highlight-color);
-    display: inline-block;
-    padding-bottom: 5px;
-}
-
-/* מיכל הכרטיסיות */
+/* 🔥 קונטיינר ראשי */
 .saiyan-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly; /* מרווח אסתטי יותר בין הפריטים */
-    gap: 30px; /* מרווח גדול יותר בין הכרטיסיות */
-    padding: 30px;
+    justify-content: center;
+    gap: 25px;
+    max-width: 1400px;
+    margin: 40px auto;
+    padding: 20px;
 }
 
-/* כרטיסיות דרגות */
+/* 🎴 כרטיסי דרגות */
 .saiyan-card {
-    width: 320px; /* הרחבת הכרטיסיות */
-    background: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(2px);
-    border-radius: 12px;
+    width: 320px;
+    background: rgba(255, 165, 0, 0.1);; /* שקיפות עדינה */
+    border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.6);
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 15px;
     position: relative;
 }
 
+/* 🎭 אפקט ריחוף */
+.saiyan-card:hover {
+    transform: scale(1.06);
+    box-shadow: 0px 10px 30px rgba(255, 165, 0, 0.7);
+}
+
+/* 🖼️ תמונות דרגות */
 .saiyan-card img {
     width: 100%;
-    height: 220px; /* מעט גובה נוסף לתמונות */
+    height: 200px;
     object-fit: cover;
-    border-bottom: 2px solid var(--highlight-color);
+    border-bottom: 3px solid var(--highlight-color);
 }
 
-/* כותרות בתוך כרטיסיות */
+/* 🏆 כותרות דרגות */
 .saiyan-card h3 {
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     color: var(--highlight-color);
-    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7);
-    margin: 10px 0;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+    margin: 15px 0;
 }
 
-/* תיאור הדרגה – מוסתר כברירת מחדל */
+/* 📝 תיאורי דרגות */
 .saiyan-info {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.5s ease-in-out;
+    transition: max-height 0.5s ease-in-out, opacity 0.3s ease-in-out;
     padding: 0 15px;
+    opacity: 0;
 }
 
-/* לחצן תיאור דרגה */
+/* 📌 לחצן פתיחת התיאור */
 .saiyan-card label {
     display: block;
     cursor: pointer;
-    padding: 12px;
-    background: rgba(0, 0, 0, 0.4);
+    padding: 10px;
+    background: rgba(255, 165, 0, 0.3); /* כתום שקוף */
     color: var(--highlight-color);
     font-weight: bold;
+    border-radius: 8px;
     transition: background 0.3s ease-in-out;
-    border-radius: 0 0 10px 10px;
+    text-align: center;
 }
 
+/* 🎭 שיפור אפקט הריחוף */
 .saiyan-card label:hover {
     background: rgba(255, 255, 255, 0.2);
 }
 
-/* פתיחת תיאור בלחיצה */
+/* ❗ הפעלת הפתיחה של התיאורים */
 .saiyan-card input[type="checkbox"] {
     display: none;
 }
 
 .saiyan-card input[type="checkbox"]:checked ~ .saiyan-info {
-    max-height: 250px;
+    max-height: 150px;
     padding: 15px;
-    background: rgba(255, 255, 255, 0.2);
-    color: black; /* שינוי צבע טקסט התיאור לשחור */
-    border-radius: 0 0 10px 10px;
+    background: rgba(0, 0, 0, 0.3);
+    color: white;
+    border-radius: 8px;
+    opacity: 1;
+}
+
+/* 🎨 עיצוב כותרות קטגוריות */
+h2 {
+    font-size: 2.5rem;
+    color: var(colo);
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.8);
+    margin-top: 50px;
+    border-bottom: 3px solid var(--highlight-color);
+    display: inline-block;
+    padding-bottom: 8px;
+}
+
+/* 📝 מבוא */
+.saiyan-intro {
+    font-size: 1.4rem;
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    color: var(--secondary-color);
+    text-shadow: 50px 50px 50px rgba(0, 0, 0, 0.6);
+}
+
+#saiyan-levels-title {
+    font-size: 3.5rem; /* גודל טקסט גדול להדגשה */
+    font-weight: bold; /* משקל כבד להדגשת הכותרת */
+    color: var(--highlight-color); /* צבע מודגש מה-vars */
+    text-shadow: 4px 4px 10px rgba(255, 165, 0, 0.8); /* זוהר כתום */
+    text-align: center;
+    margin-top: 200px;
+    padding: 15px 20px;
+    border-bottom: 4px solid rgba(255, 165, 0, 0.7); /* קו תחתון זוהר */
+    display: inline-block;
+    background: rgba(0, 0, 0, 0.3); /* רקע כהה חצי שקוף */
+    border-radius: 12px;
+    transition: transform 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+}
+
+/* 🎭 אפקט ריחוף */
+#saiyan-levels-title:hover {
+    transform: scale(1.05);
+    text-shadow: 6px 6px 15px rgba(255, 140, 0, 0.9);
+    border-bottom: 4px solid rgba(255, 140, 0, 1);
 }
 

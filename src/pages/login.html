@@ -3,19 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>התחברות</title>
+    <title>🔒 התחברות לחשבון</title>
 
+    <!-- חיבור ל-CSS -->
     <link rel="stylesheet" href="/assets/styles/vars.css">
-    <link rel="stylesheet" href="/assets/styles/layout.css">
     <link rel="stylesheet" href="/assets/styles/login.css">
+    <link rel="stylesheet" href="/assets/styles/layout.css">
+
+    <!-- פביקון -->
+    <link rel="icon" type="image/png" href="/assets/images/logo/favicon.png">
 </head>
+
 <body class="login-page">
 
+    <!-- 🎥 וידאו רקע -->
+    <div>
+        <video autoplay loop muted playsinline id="background-video">
+            <source src="/assets/Animated/angry-blue-goku-dragon-ball.3840x2160.mp4" type="video/mp4">
+            הדפדפן שלך לא תומך בווידאו.
+        </video>
+    </div>
     <section>
-        <header id="header">
-            <video autoplay loop muted playsinline id="background-video">
-                <source src="/assets/Animated/angry-blue-goku-dragon-ball.3840x2160.mp4" type="video/mp4">
-            </video>
+        <header id="nav-container">
             <nav>
                 <ul id="kotarot">
                     <li><a href="/index.html">🏠 דף הבית</a></li>
@@ -29,26 +38,37 @@
                 </ul>
             </nav>
         </header>
-    </section>
 
+    <!-- 🔹 קונטיינר התחברות -->
     <main class="login-container">
-        <h1>🔒 התחבר לחשבונך</h1>
-        <p>אם כבר נרשמת, פשוט הזן את פרטיך כדי להיכנס.</p>
+        
+        <!-- 🟠 אזור כותרת -->
+        <div class="login-header">
+            <h1>🔒 התחבר לחשבונך</h1>
+            <p>ברוך הבא! הזן את פרטיך כדי להיכנס.</p>
+        </div>
 
+        <!-- 📝 טופס התחברות -->
         <form action="#" method="POST" class="login-form">
-            <label for="email">אימייל:</label>
-            <input type="email" id="email" name="email" placeholder="example@email.com" required>
 
-            <label for="password">סיסמה:</label>
-            <input type="password" id="password" name="password" placeholder="********" required>
+            <div class="input-group">
+                <label for="email">📧 אימייל:</label>
+                <input type="email" id="email" name="email" placeholder="example@email.com" required>
+            </div>
+
+            <div class="input-group">
+                <label for="password">🔑 סיסמה:</label>
+                <input type="password" id="password" name="password" placeholder="********" required>
+            </div>
 
             <div class="checkbox-container">
                 <input type="checkbox" id="remember">
                 <label for="remember">זכור אותי</label>
             </div>
 
-            <button type="submit">🔓 התחבר</button>
+            <button type="submit">🚀 התחבר עכשיו</button>
 
+            <!-- 🔗 קישור להרשמה -->
             <p class="register-link">אין לך חשבון? <a href="/pages/registration.html">צור חשבון כאן</a> 🔥</p>
         </form>
     </main>

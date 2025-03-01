@@ -8,71 +8,90 @@
     <link rel="stylesheet" href="/assets/styles/vars.css">
     <link rel="stylesheet" href="/assets/styles/layout.css">
     <link rel="stylesheet" href="/assets/styles/registration.css">
+
+    <link rel="icon" type="image/x-icon" href="/assets/images/levels/favicon-32x32.png">
 </head>
 <body class="registration-page">
 
-    <!-- רקע וידאו -->
+    <!-- 🔥 רקע וידאו -->
     <div class="video-container">
-        <video autoplay loop muted playsinline>
+        <video autoplay loop muted playsinline id="background-video">
             <source src="/assets/Animated/angry-blue-goku-dragon-ball.3840x2160.mp4" type="video/mp4">
+            הדפדפן שלך לא תומך בווידאו.
         </video>
-        <div class="overlay"></div>
     </div>
 
-    <!-- תפריט הניווט -->
-    <nav>
-        <ul id="kotarot">
-            <li><a href="/index.html">🏠 דף הבית</a></li>
-            <li><a href="/pages/characters.html">👥 דמויות הסדרה</a></li>
-            <li><a href="/pages/seasons.html">🎥 רשימת סדרות</a></li>
-            <li><a href="/pages/battles.html">⚔ קרבות משמעותיים</a></li>
-            <li><a href="/pages/saiyan.html">🔥 דרגות הסאיינים</a></li>
-            <li><a href="/pages/movies.html">🎬 סרטי דרגון בול</a></li>
-            <li><a href="/pages/odot.html">ℹ️ אודות</a></li>
-            <li><a href="/pages/registration.html">📝 התחברות/הרשמה למועדון</a></li>
-        </ul>
-    </nav>
+    <!-- 🔹 תפריט ניווט -->
+    <header id="nav-container">
+        <nav>
+            <ul id="kotarot">
+                <li><a href="/index.html">🏠 דף הבית</a></li>
+                <li><a href="/pages/characters.html">👥 דמויות הסדרה</a></li>
+                <li><a href="/pages/seasons.html">🎥 רשימת סדרות</a></li>
+                <li><a href="/pages/battles.html">⚔ קרבות משמעותיים</a></li>
+                <li><a href="/pages/saiyan.html">🔥 דרגות הסאיינים</a></li>
+                <li><a href="/pages/movies.html">🎬 סרטי דרגון בול</a></li>
+                <li><a href="/pages/odot.html">ℹ️ אודות</a></li>
+                <li><a href="/pages/registration.html">📝 התחברות/הרשמה למועדון</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <!-- טופס ההרשמה -->
+    <!-- 📝 טופס ההרשמה -->
     <section class="registration-container">
-        <h1>🚀 הצטרפו למועדון דרגון בול</h1>
-        <p>הירשמו כדי לקבל עדכונים, חדשות, והטבות בלעדיות!</p>
+        <h1 id="registration-title">🚀 הצטרפו למועדון דרגון בול</h1>
+        <p class="registration-intro">הירשמו כדי לקבל עדכונים, חדשות, והטבות בלעדיות!</p>
 
         <form action="#" method="POST" class="registration-form">
-            <label for="fullname">שם מלא:</label>
-            <input type="text" id="fullname" name="fullname" required>
+            
+            <div class="form-group">
+                <label for="fullname">שם מלא:</label>
+                <input type="text" id="fullname" name="fullname" required>
+            </div>
 
-            <label for="email">אימייל:</label>
-            <input type="email" id="email" name="email" required>
+            <div class="form-group">
+                <label for="email">אימייל:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
 
-            <label for="password">סיסמה:</label>
-            <input type="password" id="password" name="password" required>
+            <div class="form-group">
+                <label for="password">סיסמה:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
 
-            <label for="confirm-password">אישור סיסמה:</label>
-            <input type="password" id="confirm-password" name="confirm-password" required>
+            <div class="form-group">
+                <label for="confirm-password">אישור סיסמה:</label>
+                <input type="password" id="confirm-password" name="confirm-password" required>
+            </div>
 
-            <label for="character">דמות אהובה בדרגון בול:</label>
-            <select id="character" name="character" class="character-select">
-                <option value="goku">גוקו</option>
-                <option value="vegeta">וג'יטה</option>
-                <option value="gohan">גוהאן</option>
-                <option value="bulma">בולמה</option>
-                <option value="piccolo">פיקולו</option>
-                <option value="frieza">פריזה</option>
-                <option value="cell">סל</option>
-                <option value="buu">מאג'ין בו</option>
-            </select>
+            <div class="form-group">
+                <label for="character">דמות אהובה בדרגון בול:</label>
+                <select id="character" name="character" class="character-select">
+                    <option value="goku">גוקו</option>
+                    <option value="vegeta">וג'יטה</option>
+                    <option value="gohan">גוהאן</option>
+                    <option value="bulma">בולמה</option>
+                    <option value="piccolo">פיקולו</option>
+                    <option value="frieza">פריזה</option>
+                    <option value="cell">סל</option>
+                    <option value="buu">מאג'ין בו</option>
+                </select>
+            </div>
 
-            <label class="checkbox-container">
-                <input type="checkbox" required>
-                <span class="checkmark"></span>
-                אני מאשר/ת את תנאי השימוש
-            </label>
+            <!-- ✅ תנאי שימוש -->
+            <div class="checkbox-group">
+                <label class="checkbox-container">
+                    <input type="checkbox" required>
+                    <span class="checkmark"></span>
+                    אני מאשר/ת את <a href="/pages/terms.html">תנאי השימוש </a>
+                </label>
+            </div>
 
+            <!-- 🚀 כפתור הרשמה -->
             <button type="submit" class="register-btn">🚀 הצטרפו עכשיו</button>
         </form>
 
-        <!-- אופציה להתחברות -->
+        <!-- 🔗 התחברות למשתמש קיים -->
         <p class="login-option">כבר רשום? <a href="/pages/login.html">לחץ כאן והתחבר!</a></p>
     </section>
 

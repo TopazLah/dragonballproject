@@ -1,105 +1,162 @@
-/* הגנה מקבצי CSS חיצוניים */
-#nav-container {
-    all: unset; /* מניעת ירושה מקבצים חיצוניים */
+body {
+    margin: 0;
+    padding-top: calc(45px + 20px); /* 🏆 התאמה דינמית לגובה התפריט + רווח */
+}
+/* ✅ רקע מטושטש לכל אורך הדף */
+body::before {
+    content: "";
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background: rgba(0, 0, 0, 0.3); /* רקע שקוף */
-    backdrop-filter: blur(10px); /* טשטוש רקע */
-    z-index: 1000;
-    padding: 12px 0;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    z-index: -1;
+}
+
+/* ✅ תפריט ניווט ממורכז עם שקיפות */
+#nav-container {
+    all: unset;
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    z-index: 9999;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(1px);
+    border-radius: 15px;
+    padding: 2px;
+    box-shadow: 0px 10px 15px rgba(255, 140, 0, 0.96);
     display: flex;
     justify-content: center;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
 }
 
+
+/* ✅ תפריט הניווט Grid 4x2 עם ריווח מדויק */
 #kotarot {
     all: unset;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(100px, 1fr));
+    grid-template-rows: repeat(2, 1fr);
+    gap: 10px 20px;
     list-style: none;
-    display: flex;
-    gap: 20px;
-    padding: 0;
-    margin: 0;
-}
-
-#kotarot li {
-    all: unset;
-    display: inline-block;
-    transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
-    position: relative;
-}
-
-/* עיצוב הכפתורים */
-#kotarot li a {
-    all: unset;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: bold;
-    color: rgba(255, 255, 255, 0.9);
-    padding: 14px 22px;
-    border-radius: 12px;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(50, 50, 50, 0.6));
-    display: flex;
+    padding: 20px;
+    max-width: auto;
+    justify-items: center;
     align-items: center;
-    gap: 8px;
-    position: relative;
-    overflow: hidden;
-    box-shadow: inset 0px 0px 10px rgba(255, 255, 255, 0.1);
-    transition: all 0.4s ease-in-out;
 }
 
-/* ✨ אפקט hover חדשני */
-#kotarot li a::before {
-    content: "";
-    position: absolute;
-    width: 0%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    background: rgba(255, 165, 0, 0.5);
-    transition: width 0.4s ease-in-out;
-}
-
-#kotarot li a:hover::before {
+/* ✅ עיצוב כפתורים - מרווח ומדויק */
+#kotarot li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
 }
 
-/* שינוי צבע והארה פנימית */
-#kotarot li:hover {
-    transform: translateY(-5px);
+#kotarot li a {
+    all: unset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 45px;
+    padding: 0px 16px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: rgba(255, 165, 0, 0.9); /* 🟠 שינוי צבע טקסט לכתום בהיר זוהר */
+    text-decoration: none;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    box-shadow: inset 0px 3px 8px rgba(255, 255, 255, 0.1),
+                0px 0px 10px rgba(0, 153, 255, 0.4); /* ✨ הוספת זוהר */    transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    min-width: 300px;
+    font-family: var(--primary-font);
+    cursor: pointer;
+}
+
+
+
+
+/* ✅ אפקט Hover מתקדם - ברק כתום זוהר עם מעבר מימין לשמאל */
+#kotarot li a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 140, 0, 0.8), transparent);
+    transition: all 0.4s ease-in-out;
+}
+
+#kotarot li a:hover::before {
+    left: 100%;
 }
 
 #kotarot li a:hover {
-    color: white;
-    box-shadow: 0px 0px 15px rgba(255, 165, 0, 0.8), 0px 0px 5px rgba(255, 255, 255, 0.3);
+    background: linear-gradient(90deg, rgba(0, 153, 255, 0.8), rgba(0, 51, 102, 0.8)); /* 🎨 מעבר צבע לכחול קרחוני */
+    color: rgba(173, 216, 230, 0.9); /* ❄️ טקסט הופך לכחול קרח */
+    box-shadow: 0px 0px 15px rgba(0, 153, 255, 0.6); /* ✨ זוהר חיצוני */
+    transform: scale(1.05); /* אנימציה קטנה */
 }
 
-/* לחיצה */
-#kotarot li a:active {
-    transform: scale(0.92);
+
+/* ✅ ווידוא שהתפריט תמיד מוצג נכון */
+#kotarot, #nav-container {
+    box-sizing: border-box !important;
+    display: grid !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
-/* התאמות רספונסיביות */
-@media (max-width: 1200px) {
-    #kotarot {
-        gap: 12px;
-    }
-    
-    #kotarot li a {
-        font-size: 16px;
-        padding: 12px 18px;
-    }
+/* ✅ Hero Section */
+.hero {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+    text-align: center;
+    color: var(--highlight-color);
 }
 
-@media (max-width: 900px) {
-    #kotarot {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
+.hero-content {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+}
 
-    #kotarot li {
-        flex-basis: 45%;
-        text-align: center;
-    }
+.hero h1 {
+    font-size: 3rem;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
+}
+
+.hero h1 span {
+    color: var(--primary-color);
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
+#background-video {
+    position: fixed; /* נשאר במקום גם בגלילה */
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover; /* מכסה את כל המסך בלי לעוות */
+    transform: translate(-50%, -50%);
+    z-index: -1; /* מבטיח שהוידאו יהיה מאחור */
+    opacity: 0.9; /* מעט שקוף כדי שהטקסט יבלוט */
+    pointer-events: none; /* מונע אינטראקציה עם הוידאו */
 }

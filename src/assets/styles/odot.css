@@ -1,0 +1,111 @@
+/* 🎨 עיצוב כללי */
+body#about-page {
+    font-family: var(--primary-font);
+    text-align: center;
+    background: none;
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+}
+
+
+/* 📌 קונטיינר ראשי */
+#content-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px 20px;
+    border-radius: 12px;
+    margin-top: 120px;
+}
+
+/* 🔹 כותרת ראשית */
+#about-title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--highlight-color);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    background: rgba(255, 165, 0, 0.6);
+    padding: 15px;
+    border-radius: 10px;
+    display: inline-block;
+    transition: transform 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+}
+
+/* 💡 אפקט ריחוף מתקדם לכותרת הראשית */
+#about-title:hover {
+    transform: scale(1.1);
+    text-shadow: 0px 0px 25px rgba(255, 165, 0, 0.9);
+}
+
+/* 🔹 עיצוב כותרות משנה */
+.section-title {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: var(--highlight-color);
+    margin-top: 30px;
+    padding: 10px;
+    background: rgba(255, 165, 0, 0.6);
+    border-radius: 10px;
+    display: inline-block;
+    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+
+/* 🔥 אפקט ריחוף מתקדם לכותרות משנה */
+.section-title:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 165, 0, 0.6);
+    box-shadow: 0 0 15px rgba(255, 165, 0, 0.7);
+}
+
+/* 📜 פסקאות מידע */
+.section-content,
+#about-intro,
+#thanks-text {
+    font-size: 1.5rem;
+    line-height: 1.8;
+    color: var(--text-color);
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* 🚀 אפקט ריחוף מתקדם לפסקאות */
+.section-content:hover,
+#about-intro:hover,
+#thanks-text:hover {
+    background: rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
+    background: rgba(255, 165, 0, 0.6);
+}
+
+/* 🔹 רשימות */
+#history-list,
+#facts-list {
+    list-style: none;
+    padding: 0;
+}
+
+.history-item,
+.fact-item {
+    font-size: 1.3rem;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 8px;
+    transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* ⚡ אפקט ריחוף מתקדם לרשימות */
+.history-item:hover,
+.fact-item:hover {
+    background: rgba(255, 165, 0, 0.5);
+    transform: scale(1.05);
+    box-shadow: 0px 0px 20px rgba(255, 165, 0, 0.7);
+}
+
+/* 🌟 הדגשות מיוחדות */
+.highlight {
+    font-weight: bold;
+    color: var(--secondary-color);
+}
